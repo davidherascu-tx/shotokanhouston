@@ -5,7 +5,7 @@ import Contact from "../components/Contact";
 export const metadata: Metadata = {
   title: "Contact — Visit the Dojo",
   description:
-    "Visit Shotokan Karate Houston at the Trotter Family YMCA of Greater Houston, 1331 Augusta Dr, Houston, TX 77057. Your first class is free.",
+    "Visit Shotokan Karate-Do Center, Houston, TX at the Trotter Family YMCA of Greater Houston, 1331 Augusta Dr, Houston, TX 77057. Your first class is free.",
 };
 
 export default function ContactPage() {

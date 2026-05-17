@@ -28,7 +28,7 @@ export default function Welcome() {
             <div className="relative aspect-[4/5] w-full overflow-hidden bg-charcoal shadow-2xl">
               <Image
                 src="/about_training.webp"
-                alt="Training at the Shotokan Houston dojo"
+                alt="Training at the Shotokan Karate-Do Center, Houston, TX dojo"
                 fill
                 sizes="(min-width: 1024px) 40vw, 90vw"
                 className="object-cover"
@@ -54,7 +54,7 @@ export default function Welcome() {
             </h2>
             <div className="stitch-divider mt-6 w-32" />
             <p className="mt-8 text-lg leading-relaxed text-ink-soft">
-              Shotokan Karate Houston is a proud member of the{" "}
+              Shotokan Karate-Do Center, Houston, TX is a proud member of the{" "}
               <strong className="text-ink">
                 Shotokan Karate International Federation (S.K.I.F.)
               </strong>

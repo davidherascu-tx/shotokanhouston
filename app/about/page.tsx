@@ -7,7 +7,7 @@ import Welcome from "../components/Welcome";
 export const metadata: Metadata = {
   title: "About — S.K.I.F. Tradition in Houston",
   description:
-    "Learn about Shotokan Karate Houston, a proud member dojo of the Shotokan Karate International Federation (S.K.I.F.) founded by Soke Hirokazu Kanazawa.",
+    "Learn about Shotokan Karate-Do Center, Houston, TX, a proud member dojo of the Shotokan Karate International Federation (S.K.I.F.) founded by Soke Hirokazu Kanazawa.",
 };
 
 const lineage = [
@@ -25,7 +25,7 @@ const lineage = [
   },
   {
     name: "Our Dojo",
-    title: "Shotokan Karate Houston",
+    title: "Shotokan Karate-Do Center, Houston, TX",
     years: "40+ Years · S.K.I.F. Member",
     text: "We carry the lineage forward in Houston — teaching kihon, kata, and kumite with the precision and respect that defines S.K.I.F. Shotokan. For over 40 years, our dojo has called the Trotter Family YMCA of Greater Houston home, with instructors visiting from Japan to keep our training directly connected to the source. Classes are led by Sensei Kayarash Daylami, 7th Dan.",
   },
@@ -111,6 +111,51 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-paper pb-24 lg:pb-28">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="font-display text-xs uppercase tracking-[0.4em] text-crimson">
+              Our Instructors
+            </p>
+            <h2 className="font-display mt-4 text-4xl font-bold uppercase leading-tight text-ink sm:text-5xl">
+              Senior <span className="text-crimson">Instructors</span>
+            </h2>
+            <div className="mx-auto mt-6 h-px w-24 bg-gradient-to-r from-transparent via-crimson to-transparent" />
+          </div>
+
+          <ul className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { name: "Stephan", rank: "5th Dan", image: "/stephan.webp" },
+              { name: "Lisa", rank: "5th Dan", image: "/lisa.webp" },
+              { name: "Jeff", rank: "2nd Dan", image: "/jeff.webp" },
+            ].map((instructor) => (
+              <li
+                key={instructor.name}
+                className="border border-ink/10 bg-white shadow-md"
+              >
+                <div className="relative aspect-[4/5] w-full overflow-hidden">
+                  <Image
+                    src={instructor.image}
+                    alt={instructor.name}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover object-top"
+                  />
+                </div>
+                <div className="p-6 text-center">
+                  <div className="font-display text-2xl font-bold uppercase tracking-wider text-ink">
+                    {instructor.name}
+                  </div>
+                  <div className="mt-2 text-xs uppercase tracking-[0.3em] text-crimson">
+                    {instructor.rank} · S.K.I.F.
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

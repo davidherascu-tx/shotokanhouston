@@ -68,10 +68,10 @@ export default function Contact() {
                     Phone
                   </div>
                   <a
-                    href="tel:+18325550100"
+                    href="tel:+18325130058"
                     className="mt-1 block text-bone hover:text-gold"
                   >
-                    (832) 555-0100
+                    (832) 513-0058
                   </a>
                 </div>
               </div>
@@ -94,10 +94,10 @@ export default function Contact() {
                     Email
                   </div>
                   <a
-                    href="mailto:info@shotokanhouston.com"
+                    href="mailto:shotokankaratedocenter@gmail.com"
                     className="mt-1 block text-bone hover:text-gold"
                   >
-                    info@shotokanhouston.com
+                    shotokankaratedocenter@gmail.com
                   </a>
                 </div>
               </div>
@@ -125,11 +125,42 @@ export default function Contact() {
                   </div>
                 </div>
               </div>
+
+              <div className="flex items-start gap-4">
+                <a
+                  href="https://www.facebook.com/ShotokanKarateDoCenterHoustonTexas"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Shotokan Karate-Do Center on Facebook"
+                  className="flex h-12 w-12 shrink-0 items-center justify-center border border-gold/40 bg-crimson/10 text-gold transition-colors hover:border-gold hover:text-bone"
+                >
+                  <svg
+                    className="h-5 w-5"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.7c0-.9.3-1.6 1.6-1.6h1.7V4.2c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1v2.6H7.6V14h2.7v8h3.2z" />
+                  </svg>
+                </a>
+                <div>
+                  <div className="text-xs uppercase tracking-[0.3em] text-gold">
+                    Follow
+                  </div>
+                  <a
+                    href="https://www.facebook.com/ShotokanKarateDoCenterHoustonTexas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 block text-bone hover:text-gold"
+                  >
+                    Facebook
+                  </a>
+                </div>
+              </div>
             </div>
 
             <div className="mt-10 overflow-hidden border border-bone/10 shadow-lg">
               <iframe
-                title="Map to Shotokan Karate Houston at the YMCA"
+                title="Map to Shotokan Karate-Do Center, Houston, TX at the YMCA"
                 src="https://www.google.com/maps?q=1331+Augusta+Dr,+Houston,+TX+77057&output=embed"
                 width="100%"
                 height="260"
@@ -183,7 +214,7 @@ export default function Contact() {
                   <input
                     type="tel"
                     className="mt-2 block w-full border border-bone/15 bg-charcoal px-4 py-3 text-bone outline-none transition-colors placeholder:text-bone/30 focus:border-gold"
-                    placeholder="(832) 555-0100"
+                    placeholder="(832) 513-0058"
                   />
                 </div>
               </div>

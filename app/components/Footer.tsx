@@ -10,8 +10,8 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-3">
               <span className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-bone p-1.5 shadow ring-1 ring-gold/30">
                 <Image
-                  src="/shotokan_houston_logo.png"
-                  alt="Shotokan Karate Houston — Tiger emblem"
+                  src="/shotokan_houston_logo.webp"
+                  alt="Shotokan Karate-Do Center, Houston, TX — Tiger emblem"
                   width={48}
                   height={48}
                   className="h-10 w-10 object-contain"
@@ -19,7 +19,7 @@ export default function Footer() {
               </span>
               <div>
                 <div className="font-display text-base font-bold uppercase tracking-widest text-bone">
-                  Shotokan Karate Houston
+                  Shotokan Karate-Do Center, Houston, TX
                 </div>
                 <div className="text-[10px] uppercase tracking-[0.3em] text-gold">
                   松濤館 · S.K.I.F. Member Dojo
@@ -37,6 +37,24 @@ export default function Footer() {
               <div>1331 Augusta Dr</div>
               <div>Houston, TX 77057</div>
             </address>
+
+            <div className="mt-5 flex items-center gap-3">
+              <a
+                href="https://www.facebook.com/ShotokanKarateDoCenterHoustonTexas"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Shotokan Karate-Do Center on Facebook"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-bone/20 text-bone/70 transition-colors hover:border-gold hover:text-gold"
+              >
+                <svg
+                  className="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.7c0-.9.3-1.6 1.6-1.6h1.7V4.2c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1v2.6H7.6V14h2.7v8h3.2z" />
+                </svg>
+              </a>
+            </div>
           </div>
 
           <div>
@@ -83,8 +101,8 @@ export default function Footer() {
 
         <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-6 text-xs text-bone/40 sm:flex-row sm:items-center">
           <div>
-            © {new Date().getFullYear()} Shotokan Karate Houston · S.K.I.F.
-            Member Dojo. All rights reserved.
+            © {new Date().getFullYear()} Shotokan Karate-Do Center, Houston, TX
+            · S.K.I.F. Member Dojo. All rights reserved.
           </div>
           <div className="font-display uppercase tracking-[0.3em]">
             一生懸命 · Do your very best

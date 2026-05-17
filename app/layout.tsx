@@ -17,8 +17,8 @@ const cinzel = Cinzel({
 
 export const metadata: Metadata = {
   title: {
-    default: "Shotokan Karate Houston — S.K.I.F. Member Dojo",
-    template: "%s · Shotokan Karate Houston",
+    default: "Shotokan Karate-Do Center, Houston, TX — S.K.I.F. Member Dojo",
+    template: "%s · Shotokan Karate-Do Center, Houston, TX",
   },
   description:
     "Traditional Shotokan karate dojo in Houston, Texas — a proud member of the Shotokan Karate International Federation (S.K.I.F.). Classes for kids, youth, and adults inside the Trotter Family YMCA of Greater Houston.",

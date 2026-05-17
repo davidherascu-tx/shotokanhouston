@@ -44,8 +44,8 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-3 group">
           <span className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-bone p-1.5 shadow-md ring-1 ring-gold/40 transition-transform group-hover:scale-105">
             <Image
-              src="/shotokan_houston_logo.png"
-              alt="Shotokan Karate Houston — Tiger emblem"
+              src="/shotokan_houston_logo.webp"
+              alt="Shotokan Karate-Do Center, Houston, TX — Tiger emblem"
               width={48}
               height={48}
               className="h-10 w-10 object-contain"
@@ -53,10 +53,10 @@ export default function Navbar() {
           </span>
           <div className="hidden sm:block leading-tight">
             <div className="font-display text-lg font-bold uppercase tracking-widest text-bone group-hover:text-gold transition-colors">
-              Shotokan
+              Shotokan Karate-Do Center
             </div>
             <div className="text-[10px] uppercase tracking-[0.3em] text-gold/90">
-              Houston · S.K.I.F.
+              Houston, TX · S.K.I.F.
             </div>
           </div>
         </Link>

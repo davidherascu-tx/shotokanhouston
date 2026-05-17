@@ -10,18 +10,21 @@ const slides = [
     eyebrow: "Karate-Do · 空手道",
     title: "Respect. Strength. Discipline.",
     body: "Traditional Shotokan karate training in the heart of Houston — for every age, every experience level, every spirit.",
+    position: "object-top",
   },
   {
     src: "/slider_2.webp",
     eyebrow: "Train With Purpose",
     title: "Forge Your Body and Mind",
     body: "Kihon, kata, and kumite taught traditionally, the way they have been taught for generations.",
+    position: "object-center",
   },
   {
     src: "/slider_3.webp",
     eyebrow: "All Ages Welcome",
     title: "From First Step to Black Belt",
     body: "Classes for kids, youth, and adults — beginners are welcomed warmly into the dojo family.",
+    position: "object-center",
   },
 ];
 
@@ -51,7 +54,7 @@ export default function HeroSlider() {
             fill
             sizes="100vw"
             preload={i === 0}
-            className={`object-cover ${
+            className={`object-cover ${s.position} ${
               i === index ? "animate-[fadezoom_8s_ease-out_forwards]" : ""
             }`}
           />
