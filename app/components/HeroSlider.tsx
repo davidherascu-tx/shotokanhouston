@@ -6,19 +6,19 @@ import { useEffect, useState } from "react";
 
 const slides = [
   {
-    src: "/slider_1.jpg",
+    src: "/slider_1.webp",
     eyebrow: "Karate-Do · 空手道",
-    title: "Discipline. Respect. Strength.",
-    body: "Traditional Shotokan training in the heart of Houston — for every age, every belt, every spirit.",
+    title: "Respect. Strength. Discipline.",
+    body: "Traditional Shotokan karate training in the heart of Houston — for every age, every experience level, every spirit.",
   },
   {
-    src: "/slider_2.jpg",
+    src: "/slider_2.webp",
     eyebrow: "Train With Purpose",
-    title: "Forge Body and Mind",
-    body: "Kihon, kata, and kumite taught the way they have been for generations.",
+    title: "Forge Your Body and Mind",
+    body: "Kihon, kata, and kumite taught traditionally, the way they have been taught for generations.",
   },
   {
-    src: "/slider_3.jpg",
+    src: "/slider_3.webp",
     eyebrow: "All Ages Welcome",
     title: "From First Step to Black Belt",
     body: "Classes for kids, youth, and adults — beginners are welcomed warmly into the dojo family.",

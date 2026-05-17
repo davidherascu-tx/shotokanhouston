@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const programs = [
   {
-    image: "/Image_Kids.jpg",
+    image: "/kids_program.webp",
     age: "Ages 6 – 11",
     title: "Kids Karate",
     subtitle: "Beginner & Intermediate",
@@ -17,7 +17,7 @@ const programs = [
     ],
   },
   {
-    image: "/Image_Teen.jpg",
+    image: "/youth_program.webp",
     age: "Ages 12 +",
     title: "Youth Program",
     subtitle: "Intermediate Training",
@@ -27,11 +27,11 @@ const programs = [
       "Strength & conditioning",
       "Advanced kata",
       "Controlled sparring",
-      "Tournament prep",
+      "Self Confidence",
     ],
   },
   {
-    image: "/Image_Adults.jpg",
+    image: "/adult_program.webp",
     age: "Adults",
     title: "Adult Karate",
     subtitle: "All Levels Welcome",
@@ -61,7 +61,7 @@ export default function Programs() {
           </h2>
           <div className="mx-auto mt-6 h-px w-24 bg-gradient-to-r from-transparent via-gold to-transparent" />
           <p className="mt-6 text-lg leading-relaxed text-bone/70">
-            From a child&apos;s first bow to an adult&apos;s pursuit of black belt,
+            From a child&apos;s first bow of respect to an adult&apos;s pursuit of black belt,
             our programs are designed to meet you where you are and take you
             further than you thought possible.
           </p>

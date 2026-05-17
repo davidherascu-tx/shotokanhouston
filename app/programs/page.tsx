@@ -15,8 +15,8 @@ export default function ProgramsPage() {
       <PageHero
         eyebrow="Training Programs"
         title="Classes for Every Karateka"
-        subtitle="From a child's first bow to an adult's pursuit of black belt — programs designed to meet you where you are."
-        image="/Image_Adults.jpg"
+        subtitle="From a child's first bow of respect to an adult's pursuit of black belt — programs designed to meet you where you are."
+        image="/adult_program.webp"
       />
 
       <Programs />

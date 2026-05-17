@@ -10,7 +10,7 @@ export default function IntroTeaser() {
             <div className="absolute -left-3 -top-3 hidden h-full w-full border-2 border-crimson/30 lg:block" />
             <div className="relative aspect-[5/4] w-full overflow-hidden bg-charcoal shadow-2xl">
               <Image
-                src="/training_1.jpg"
+                src="/training.webp"
                 alt="Karate training at Shotokan Houston"
                 fill
                 sizes="(min-width: 1024px) 50vw, 90vw"
@@ -47,8 +47,8 @@ export default function IntroTeaser() {
               <em>budo</em>.
             </p>
             <p className="mt-4 text-lg leading-relaxed text-ink-soft">
-              Located inside the YMCA of Greater Houston, our dojo welcomes
-              students of all ages — from a child&apos;s first bow to an
+              Located inside the Trotter Family YMCA of Greater Houston, our dojo welcomes
+              students of all ages — from a child&apos;s first bow of respect to an
               adult&apos;s pursuit of black belt.
             </p>
 

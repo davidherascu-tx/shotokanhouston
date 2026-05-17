@@ -3,7 +3,7 @@
 export default function Contact() {
   return (
     <section className="relative bg-charcoal py-24 lg:py-32">
-      <div className="absolute inset-0 opacity-[0.04] [background-image:repeating-linear-gradient(45deg,#fff_0,#fff_1px,transparent_1px,transparent_12px)]" />
+      <div className="absolute inset-0 [background-image:radial-gradient(ellipse_at_top_left,rgba(180,30,30,0.12)_0%,transparent_60%),radial-gradient(ellipse_at_bottom_right,rgba(212,175,55,0.08)_0%,transparent_60%)]" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid gap-12 lg:grid-cols-2">
@@ -16,7 +16,7 @@ export default function Contact() {
             </h2>
             <div className="mt-6 h-px w-24 bg-gold" />
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-bone/75">
-              We train inside the YMCA of Greater Houston. Drop by to observe a
+              We train inside the Trotter Family YMCA of Greater Houston. Drop by to observe a
               class, meet our instructors, or sign up for your first free
               session.
             </p>
@@ -39,7 +39,7 @@ export default function Contact() {
                   <div className="text-xs uppercase tracking-[0.3em] text-gold">
                     Location
                   </div>
-                  <div className="mt-1 text-bone">YMCA of Greater Houston</div>
+                  <div className="mt-1 text-bone">Trotter Family YMCA of Greater Houston</div>
                   <a
                     href="https://www.google.com/maps/search/?api=1&query=1331+Augusta+Dr+Houston+TX+77057"
                     target="_blank"

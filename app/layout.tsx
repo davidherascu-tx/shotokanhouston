@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s · Shotokan Karate Houston",
   },
   description:
-    "Traditional Shotokan karate dojo in Houston, Texas — a proud member of the Shotokan Karate International Federation (S.K.I.F.). Classes for kids, youth, and adults inside the YMCA of Greater Houston.",
+    "Traditional Shotokan karate dojo in Houston, Texas — a proud member of the Shotokan Karate International Federation (S.K.I.F.). Classes for kids, youth, and adults inside the Trotter Family YMCA of Greater Houston.",
 };
 
 export default function RootLayout({

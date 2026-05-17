@@ -5,7 +5,7 @@ import Schedule from "../components/Schedule";
 export const metadata: Metadata = {
   title: "Class Schedule — Weekly Training Times",
   description:
-    "Weekly Shotokan karate class schedule at the YMCA of Greater Houston — kids, youth, adults, and kata classes.",
+    "Weekly Shotokan karate class schedule at the Trotter Family YMCA of Greater Houston — kids, youth, adults, and kata classes.",
 };
 
 export default function SchedulePage() {
@@ -14,8 +14,8 @@ export default function SchedulePage() {
       <PageHero
         eyebrow="Weekly Schedule"
         title="When We Train"
-        subtitle="Classes run year-round at the Main and Small Dojos inside the YMCA of Greater Houston."
-        image="/training_1.jpg"
+        subtitle="Classes run year-round at the Main and Small Dojos inside the Trotter Family YMCA of Greater Houston."
+        image="/training.webp"
       />
 
       <Schedule />

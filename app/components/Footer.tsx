@@ -10,7 +10,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-3">
               <span className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-bone p-1.5 shadow ring-1 ring-gold/30">
                 <Image
-                  src="/shotokan_tiger.png"
+                  src="/shotokan_houston_logo.png"
                   alt="Shotokan Karate Houston — Tiger emblem"
                   width={48}
                   height={48}
@@ -33,7 +33,7 @@ export default function Footer() {
             </p>
 
             <address className="mt-5 not-italic text-sm leading-relaxed">
-              <div className="text-bone">YMCA of Greater Houston</div>
+              <div className="text-bone">Trotter Family YMCA of Greater Houston</div>
               <div>1331 Augusta Dr</div>
               <div>Houston, TX 77057</div>
             </address>

@@ -221,7 +221,7 @@ export default function Schedule() {
         <div className="mt-16 grid items-center gap-10 overflow-hidden border border-ink/10 bg-charcoal lg:grid-cols-2">
           <div className="relative h-64 w-full lg:h-full">
             <Image
-              src="/training_1.jpg"
+              src="/training.webp"
               alt="Karate training session"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
@@ -238,8 +238,8 @@ export default function Schedule() {
             </h3>
             <p className="mt-4 text-bone/75">
               Come visit the dojo, meet our instructors, and try a class on us.
-              No commitment, no pressure — just bring an open mind and a clean
-              pair of socks.
+              No commitment, no pressure — just bring an open mind and wear
+              comfortable workout clothing.
             </p>
             <Link
               href="/contact"

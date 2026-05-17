@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import PageHero from "../components/PageHero";
 import Welcome from "../components/Welcome";
@@ -25,8 +26,8 @@ const lineage = [
   {
     name: "Our Dojo",
     title: "Shotokan Karate Houston",
-    years: "S.K.I.F. Member",
-    text: "We carry the lineage forward in Houston — teaching kihon, kata, and kumite with the precision and respect that defines S.K.I.F. Shotokan.",
+    years: "40+ Years · S.K.I.F. Member",
+    text: "We carry the lineage forward in Houston — teaching kihon, kata, and kumite with the precision and respect that defines S.K.I.F. Shotokan. For over 40 years, our dojo has called the Trotter Family YMCA of Greater Houston home, with instructors visiting from Japan to keep our training directly connected to the source. Classes are led by Sensei Kayarash Daylami, 7th Dan.",
   },
 ];
 
@@ -37,7 +38,7 @@ export default function AboutPage() {
         eyebrow="About the Dojo"
         title="Tradition, Discipline, and Lineage"
         subtitle="A proud Shotokan Karate International Federation member dojo in Houston, Texas."
-        image="/seiza.jpg"
+        image="/about_training.webp"
       />
 
       <Welcome />
@@ -76,6 +77,40 @@ export default function AboutPage() {
               </li>
             ))}
           </ol>
+        </div>
+      </section>
+
+      <section className="bg-paper py-24 lg:py-28">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="mt-0 grid items-center gap-0 overflow-hidden border border-ink/10 shadow-xl lg:grid-cols-2">
+            <div className="w-full">
+              <Image
+                src="/sensei_kayarash_daylami.webp"
+                alt="Sensei Kayarash Daylami"
+                width={0}
+                height={0}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="w-full h-auto"
+              />
+            </div>
+            <div className="bg-white p-10 lg:p-14 h-full">
+              <p className="font-display text-xs uppercase tracking-[0.4em] text-crimson">
+                Lead Instructor
+              </p>
+              <div className="mt-3 font-display text-3xl font-bold uppercase tracking-wider text-ink sm:text-4xl">
+                Sensei Kayarash Daylami
+              </div>
+              <div className="mt-2 text-xs uppercase tracking-[0.3em] text-crimson">
+                7th Dan · S.K.I.F.
+              </div>
+              <div className="mt-5 h-px w-16 bg-gradient-to-r from-crimson/60 to-transparent" />
+              <p className="mt-6 text-base leading-relaxed text-ink-soft">
+                Sensei Daylami brings decades of S.K.I.F. Shotokan training to
+                every class, maintaining strong ties with instructors in Japan to
+                ensure our students receive teaching that is true to the tradition.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 

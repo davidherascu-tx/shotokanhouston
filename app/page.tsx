@@ -20,7 +20,7 @@ export default function Home() {
           </h2>
           <div className="mx-auto mt-6 h-px w-24 bg-gradient-to-r from-transparent via-crimson to-transparent" />
           <p className="mt-6 text-lg leading-relaxed text-ink-soft">
-            Come visit the dojo at the YMCA of Greater Houston, meet our
+            Come visit the dojo at the Trotter Family YMCA of Greater Houston, meet our
             instructors, and try a class on us. No commitment — just an open
             mind and a willingness to learn.
           </p>
