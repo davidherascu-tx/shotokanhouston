@@ -126,10 +126,11 @@ export default function AboutPage() {
             <div className="mx-auto mt-6 h-px w-24 bg-gradient-to-r from-transparent via-crimson to-transparent" />
           </div>
 
-          <ul className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { name: "Stephan", rank: "5th Dan", image: "/stephan.webp" },
               { name: "Lisa", rank: "5th Dan", image: "/lisa.webp" },
+              { name: "Cyril", rank: "3rd Dan", image: "/cyril.webp" },
               { name: "Jeff", rank: "2nd Dan", image: "/jeff.webp" },
             ].map((instructor) => (
               <li
@@ -207,6 +208,60 @@ export default function AboutPage() {
           >
             See Our Programs
           </Link>
+        </div>
+      </section>
+
+      <section className="bg-paper pb-24 lg:pb-28">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="font-display text-xs uppercase tracking-[0.4em] text-crimson">
+              Affiliated Dojos
+            </p>
+            <h2 className="font-display mt-4 text-4xl font-bold uppercase leading-tight text-ink sm:text-5xl">
+              Our Extended <span className="text-crimson">Family</span>
+            </h2>
+            <div className="mx-auto mt-6 h-px w-24 bg-gradient-to-r from-transparent via-crimson to-transparent" />
+          </div>
+
+          <div className="mx-auto mt-16 max-w-sm">
+            <a
+              href="https://doshinkaidojo.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block border border-ink/10 bg-white shadow-md transition-shadow hover:shadow-xl"
+            >
+              <div className="relative aspect-[4/5] w-full overflow-hidden">
+                <Image
+                  src="/ruben.webp"
+                  alt="Ruben"
+                  fill
+                  sizes="(min-width: 640px) 33vw, 100vw"
+                  className="object-cover object-top"
+                />
+              </div>
+              <div className="p-6 text-center">
+                <div className="font-display text-2xl font-bold uppercase tracking-wider text-ink">
+                  Ruben
+                </div>
+                <div className="mt-2 text-xs uppercase tracking-[0.3em] text-crimson">
+                  6th Dan · S.K.I.F.
+                </div>
+                <div className="mt-3 text-sm text-ink-soft">
+                  Event Director · Shotokan Karate-Do Center
+                </div>
+                <div className="mx-auto mt-5 h-px w-12 bg-gradient-to-r from-transparent via-crimson to-transparent" />
+                <div className="mt-5 font-display text-lg font-bold uppercase tracking-wider text-ink">
+                  Doshinkai Dojo
+                </div>
+                <div className="mt-1 text-xs uppercase tracking-[0.25em] text-ink-soft/70">
+                  Cincinnati, OH
+                </div>
+                <div className="mt-5 inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.3em] text-crimson transition-colors group-hover:text-crimson-light">
+                  Visit Website →
+                </div>
+              </div>
+            </a>
+          </div>
         </div>
       </section>
     </>
