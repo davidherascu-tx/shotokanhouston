@@ -129,12 +129,17 @@ export default function AboutPage() {
           <ul className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { name: "Stephan", rank: "5th Dan", image: "/stephan.webp" },
+              { name: "Stephan", rank: "5th Dan", image: "/stephan_1.webp" },
               { name: "Lisa", rank: "5th Dan", image: "/lisa.webp" },
+              { name: "Lisa", rank: "5th Dan", image: "/lisa_2.webp" },
+              { name: "Lisa", rank: "5th Dan", image: "/lisa_3.webp" },
               { name: "Cyril", rank: "3rd Dan", image: "/cyril.webp" },
+              { name: "Cyril", rank: "3rd Dan", image: "/cyril_1.webp" },
               { name: "Jeff", rank: "2nd Dan", image: "/jeff.webp" },
+              { name: "Jeff", rank: "2nd Dan", image: "/jeff_2.webp" },
             ].map((instructor) => (
               <li
-                key={instructor.name}
+                key={instructor.image}
                 className="border border-ink/10 bg-white shadow-md"
               >
                 <div className="relative aspect-[4/5] w-full overflow-hidden">
