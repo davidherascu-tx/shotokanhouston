@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export type GalleryItem = {
   src: string;
@@ -24,6 +24,8 @@ export default function Lightbox({
   onPrev,
   onNext,
 }: Props) {
+  const touchStartX = useRef<number | null>(null);
+
   useEffect(() => {
     if (activeIndex === null) return;
 
@@ -54,6 +56,17 @@ export default function Lightbox({
       aria-label={`Photo from ${active.year}`}
       className="fixed inset-0 z-[100] flex items-center justify-center bg-ink/95 p-4 sm:p-10"
       onClick={onClose}
+      onTouchStart={(e) => {
+        touchStartX.current = e.touches[0].clientX;
+      }}
+      onTouchEnd={(e) => {
+        if (touchStartX.current === null) return;
+        const delta = e.changedTouches[0].clientX - touchStartX.current;
+        touchStartX.current = null;
+        if (Math.abs(delta) < 50) return;
+        if (delta < 0) onNext();
+        else onPrev();
+      }}
     >
       <button
         type="button"
@@ -62,7 +75,7 @@ export default function Lightbox({
           e.stopPropagation();
           onClose();
         }}
-        className="absolute right-4 top-4 inline-flex h-11 w-11 items-center justify-center border border-bone/30 text-bone transition-colors hover:border-crimson hover:bg-crimson sm:right-8 sm:top-8"
+        className="absolute right-4 top-4 z-10 inline-flex h-11 w-11 items-center justify-center border border-bone/30 text-bone transition-colors hover:border-crimson hover:bg-crimson sm:right-8 sm:top-8"
       >
         <svg
           className="h-4 w-4"
@@ -87,7 +100,7 @@ export default function Lightbox({
               e.stopPropagation();
               onPrev();
             }}
-            className="absolute left-2 top-1/2 -translate-y-1/2 inline-flex h-12 w-12 items-center justify-center border border-bone/30 text-bone transition-colors hover:border-crimson hover:bg-crimson sm:left-8"
+            className="absolute left-2 top-1/2 z-10 -translate-y-1/2 inline-flex h-12 w-12 items-center justify-center border border-bone/30 text-bone transition-colors hover:border-crimson hover:bg-crimson sm:left-8"
           >
             <svg
               className="h-5 w-5"
@@ -108,7 +121,7 @@ export default function Lightbox({
               e.stopPropagation();
               onNext();
             }}
-            className="absolute right-2 top-1/2 -translate-y-1/2 inline-flex h-12 w-12 items-center justify-center border border-bone/30 text-bone transition-colors hover:border-crimson hover:bg-crimson sm:right-8"
+            className="absolute right-2 top-1/2 z-10 -translate-y-1/2 inline-flex h-12 w-12 items-center justify-center border border-bone/30 text-bone transition-colors hover:border-crimson hover:bg-crimson sm:right-8"
           >
             <svg
               className="h-5 w-5"
