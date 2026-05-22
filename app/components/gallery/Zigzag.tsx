@@ -50,7 +50,7 @@ export default function Zigzag({ items }: Props) {
             return (
               <li
                 key={group.year}
-                className="relative grid grid-cols-1 items-center gap-6 sm:grid-cols-2 sm:gap-16"
+                className="relative grid grid-cols-1 items-start gap-6 sm:grid-cols-2 sm:gap-16"
               >
                 {/* Dot on the line */}
                 <span
@@ -69,9 +69,9 @@ export default function Zigzag({ items }: Props) {
                   />
                 </div>
 
-                {/* Year + caption column */}
+                {/* Year + caption column — sticky while photos are in view */}
                 <div
-                  className={`pl-12 sm:pl-0 ${photoSide === "left" ? "sm:pl-12 sm:order-2 sm:text-left" : "sm:pr-12 sm:order-1 sm:text-right"}`}
+                  className={`pl-12 sm:pl-0 sm:sticky sm:top-24 sm:self-start ${photoSide === "left" ? "sm:pl-12 sm:order-2 sm:text-left" : "sm:pr-12 sm:order-1 sm:text-right"}`}
                 >
                   <div className="font-display text-xs uppercase tracking-[0.4em] text-crimson">
                     Chapter {String(i + 1).padStart(2, "0")}
@@ -122,15 +122,16 @@ function PhotoStack({
             key={photo.src}
             type="button"
             onClick={() => onOpen(idx)}
-            className="group relative block aspect-[4/3] w-full overflow-hidden bg-ink shadow-md transition-shadow hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
+            className="group relative block w-full overflow-hidden bg-ink/80 shadow-md transition-shadow hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
             aria-label={`Open photo from ${photo.year}`}
           >
             <Image
               src={photo.src}
               alt={`Photo from ${photo.year}`}
-              fill
+              width={1200}
+              height={900}
               sizes="(min-width: 640px) 40vw, 100vw"
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
             />
             <div className="pointer-events-none absolute inset-0 bg-ink/0 transition-colors group-hover:bg-ink/15" />
           </button>
