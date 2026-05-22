@@ -1,6 +1,7 @@
 import Link from "next/link";
 import HeroSlider from "./components/HeroSlider";
 import IntroTeaser from "./components/IntroTeaser";
+import InternationalWelcome from "./components/InternationalWelcome";
 import Programs from "./components/Programs";
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
       <HeroSlider />
       <IntroTeaser />
       <Programs />
+      <InternationalWelcome />
 
       <section className="relative bg-paper py-24 lg:py-28">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-10">

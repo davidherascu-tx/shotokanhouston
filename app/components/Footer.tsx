@@ -78,6 +78,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/gallery" className="hover:text-gold">
+                  Gallery
+                </Link>
+              </li>
+              <li>
                 <Link href="/contact" className="hover:text-gold">
                   Contact Us
                 </Link>

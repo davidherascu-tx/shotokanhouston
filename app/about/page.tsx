@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import InternationalWelcome from "../components/InternationalWelcome";
 import PageHero from "../components/PageHero";
 import Welcome from "../components/Welcome";
 
@@ -128,18 +129,13 @@ export default function AboutPage() {
 
           <ul className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { name: "Stephan", rank: "5th Dan", image: "/stephan.webp" },
               { name: "Stephan", rank: "5th Dan", image: "/stephan_1.webp" },
               { name: "Lisa", rank: "5th Dan", image: "/lisa.webp" },
-              { name: "Lisa", rank: "5th Dan", image: "/lisa_2.webp" },
-              { name: "Lisa", rank: "5th Dan", image: "/lisa_3.webp" },
-              { name: "Cyril", rank: "3rd Dan", image: "/cyril.webp" },
               { name: "Cyril", rank: "3rd Dan", image: "/cyril_1.webp" },
               { name: "Jeff", rank: "2nd Dan", image: "/jeff.webp" },
-              { name: "Jeff", rank: "2nd Dan", image: "/jeff_2.webp" },
             ].map((instructor) => (
               <li
-                key={instructor.image}
+                key={instructor.name}
                 className="border border-ink/10 bg-white shadow-md"
               >
                 <div className="relative aspect-[4/5] w-full overflow-hidden">
@@ -216,7 +212,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-paper pb-24 lg:pb-28">
+      <section className="bg-paper py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="mx-auto max-w-2xl text-center">
             <p className="font-display text-xs uppercase tracking-[0.4em] text-crimson">
@@ -269,6 +265,15 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <InternationalWelcome
+        variant="light"
+        eyebrow="Open Doors"
+        headlineLead="Beyond Our"
+        headlineAccent="Federation"
+        body={"Our family extends beyond the dojos we’re directly affiliated with. If you train Shotokan — in any federation, anywhere in the world — you have a place on our floor. Visitors moving to Houston, karatekas passing through, students from other organizations: come train with us. The lineage we share is bigger than any single banner."}
+        pillars={["Any Federation", "Any Rank", "Any Background"]}
+      />
     </>
   );
 }
