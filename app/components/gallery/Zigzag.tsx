@@ -71,7 +71,7 @@ export default function Zigzag({ items }: Props) {
 
                 {/* Year + caption column — sticky while photos are in view */}
                 <div
-                  className={`pl-12 sm:pl-0 sm:sticky sm:top-24 sm:self-start ${photoSide === "left" ? "sm:pl-12 sm:order-2 sm:text-left" : "sm:pr-12 sm:order-1 sm:text-right"}`}
+                  className={`pl-12 sm:pl-0 order-first sticky top-20 self-start sm:top-24 ${photoSide === "left" ? "sm:pl-12 sm:order-2 sm:text-left" : "sm:pr-12 sm:order-1 sm:text-right"}`}
                 >
                   <div className="font-display text-xs uppercase tracking-[0.4em] text-crimson">
                     Chapter {String(i + 1).padStart(2, "0")}

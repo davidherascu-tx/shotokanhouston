@@ -52,8 +52,8 @@ export default function Navbar() {
               className="h-10 w-10 object-contain"
             />
           </span>
-          <div className="hidden sm:block leading-tight">
-            <div className="font-display text-lg font-bold uppercase tracking-widest text-bone group-hover:text-gold transition-colors">
+          <div className="block leading-tight">
+            <div className="font-display text-sm font-bold uppercase tracking-widest text-bone group-hover:text-gold transition-colors sm:text-lg">
               Shotokan Karate-Do Center
             </div>
             <div className="text-[10px] uppercase tracking-[0.3em] text-gold/90">
