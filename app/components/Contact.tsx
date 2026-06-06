@@ -1,6 +1,46 @@
 "use client";
 
+import { useState } from "react";
+
+type Status = "idle" | "sending" | "success" | "error";
+
 export default function Contact() {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    program: "",
+    message: "",
+  });
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  function handleChange(
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  }
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setStatus("sending");
+    setErrorMsg("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error ?? "Something went wrong.");
+      setStatus("success");
+      setForm({ name: "", email: "", phone: "", program: "", message: "" });
+    } catch (err: unknown) {
+      setErrorMsg(err instanceof Error ? err.message : "Something went wrong.");
+      setStatus("error");
+    }
+  }
+
   return (
     <section className="relative bg-charcoal py-24 lg:py-32">
       <div className="absolute inset-0 [background-image:radial-gradient(ellipse_at_top_left,rgba(180,30,30,0.12)_0%,transparent_60%),radial-gradient(ellipse_at_bottom_right,rgba(212,175,55,0.08)_0%,transparent_60%)]" />
@@ -173,7 +213,7 @@ export default function Contact() {
 
           <form
             className="border border-bone/10 bg-ink-soft/60 p-8 backdrop-blur lg:p-10"
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={handleSubmit}
           >
             <h3 className="font-display text-2xl font-bold uppercase tracking-wider text-bone">
               Send a Message
@@ -182,6 +222,17 @@ export default function Contact() {
               Tell us a bit about yourself and we&apos;ll be in touch.
             </p>
 
+            {status === "success" && (
+              <div className="mt-4 border border-gold/40 bg-gold/10 px-4 py-3 text-sm text-gold">
+                Thank you! Your message has been sent. We&apos;ll be in touch soon.
+              </div>
+            )}
+            {status === "error" && (
+              <div className="mt-4 border border-crimson/40 bg-crimson/10 px-4 py-3 text-sm text-bone/80">
+                {errorMsg}
+              </div>
+            )}
+
             <div className="mt-6 space-y-4">
               <div>
                 <label className="block text-xs uppercase tracking-[0.25em] text-gold">
@@ -189,7 +240,10 @@ export default function Contact() {
                 </label>
                 <input
                   type="text"
+                  name="name"
                   required
+                  value={form.name}
+                  onChange={handleChange}
                   className="mt-2 block w-full border border-bone/15 bg-charcoal px-4 py-3 text-bone outline-none transition-colors placeholder:text-bone/30 focus:border-gold"
                   placeholder="Your full name"
                 />
@@ -202,7 +256,10 @@ export default function Contact() {
                   </label>
                   <input
                     type="email"
+                    name="email"
                     required
+                    value={form.email}
+                    onChange={handleChange}
                     className="mt-2 block w-full border border-bone/15 bg-charcoal px-4 py-3 text-bone outline-none transition-colors placeholder:text-bone/30 focus:border-gold"
                     placeholder="you@example.com"
                   />
@@ -213,6 +270,9 @@ export default function Contact() {
                   </label>
                   <input
                     type="tel"
+                    name="phone"
+                    value={form.phone}
+                    onChange={handleChange}
                     className="mt-2 block w-full border border-bone/15 bg-charcoal px-4 py-3 text-bone outline-none transition-colors placeholder:text-bone/30 focus:border-gold"
                     placeholder="(832) 513-0058"
                   />
@@ -224,12 +284,12 @@ export default function Contact() {
                   Program of Interest
                 </label>
                 <select
+                  name="program"
+                  value={form.program}
+                  onChange={handleChange}
                   className="mt-2 block w-full border border-bone/15 bg-charcoal px-4 py-3 text-bone outline-none transition-colors focus:border-gold"
-                  defaultValue=""
                 >
-                  <option value="" disabled>
-                    Choose a program
-                  </option>
+                  <option value="">Choose a program</option>
                   <option>Kids Karate (6 – 11)</option>
                   <option>Youth Program (12+)</option>
                   <option>Adult Karate</option>
@@ -242,7 +302,10 @@ export default function Contact() {
                   Message
                 </label>
                 <textarea
+                  name="message"
                   rows={4}
+                  value={form.message}
+                  onChange={handleChange}
                   className="mt-2 block w-full resize-none border border-bone/15 bg-charcoal px-4 py-3 text-bone outline-none transition-colors placeholder:text-bone/30 focus:border-gold"
                   placeholder="Tell us about yourself or your child..."
                 />
@@ -250,9 +313,10 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full bg-crimson px-6 py-3.5 text-sm font-semibold uppercase tracking-widest text-bone shadow-lg transition-all hover:bg-crimson-light"
+                disabled={status === "sending"}
+                className="w-full bg-crimson px-6 py-3.5 text-sm font-semibold uppercase tracking-widest text-bone shadow-lg transition-all hover:bg-crimson-light disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Send Message
+                {status === "sending" ? "Sending…" : "Send Message"}
               </button>
             </div>
           </form>
