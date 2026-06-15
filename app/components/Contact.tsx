@@ -14,6 +14,7 @@ export default function Contact() {
   });
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const [sentName, setSentName] = useState("");
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -33,6 +34,7 @@ export default function Contact() {
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? "Something went wrong.");
+      setSentName(form.name.trim().split(/\s+/)[0] ?? "");
       setStatus("success");
       setForm({ name: "", email: "", phone: "", program: "", message: "" });
     } catch (err: unknown) {
@@ -211,6 +213,80 @@ export default function Contact() {
             </div>
           </div>
 
+          {status === "success" ? (
+            <div
+              role="status"
+              aria-live="polite"
+              className="flex flex-col items-center border border-gold/30 bg-ink-soft/60 p-8 text-center backdrop-blur lg:p-12"
+              style={{ animation: "successFadeIn 400ms ease-out both" }}
+            >
+              <div className="relative">
+                <span
+                  aria-hidden
+                  className="absolute inset-0 rounded-full bg-gold/40"
+                  style={{
+                    animation: "successRing 900ms ease-out 200ms both",
+                  }}
+                />
+                <div
+                  className="relative flex h-24 w-24 items-center justify-center rounded-full bg-gold/15 ring-2 ring-gold/70 shadow-[0_0_40px_-8px_rgba(201,162,74,0.6)]"
+                  style={{
+                    animation:
+                      "successPop 500ms cubic-bezier(0.34,1.56,0.64,1) both",
+                  }}
+                >
+                  <svg
+                    className="h-12 w-12 text-gold"
+                    viewBox="0 0 52 52"
+                    fill="none"
+                  >
+                    <path
+                      d="M13 27 L22 36 L39 18"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      style={{
+                        strokeDasharray: 50,
+                        strokeDashoffset: 50,
+                        animation:
+                          "checkmarkDraw 450ms 350ms ease-out forwards",
+                      }}
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <h3 className="font-display mt-7 text-3xl font-bold uppercase tracking-wider text-bone sm:text-4xl">
+                Message Sent
+              </h3>
+              <div className="mt-4 h-px w-16 bg-gold" />
+              <p className="mt-6 max-w-sm text-base leading-relaxed text-bone/80">
+                Thank you
+                {sentName ? (
+                  <>
+                    , <span className="font-semibold text-gold">{sentName}</span>
+                  </>
+                ) : null}
+                . Your message was delivered successfully — we&apos;ll be in
+                touch within 24 hours.
+              </p>
+              <p className="mt-3 font-display text-xs uppercase tracking-[0.4em] text-bone/40">
+                ありがとうございました
+              </p>
+
+              <button
+                type="button"
+                onClick={() => {
+                  setStatus("idle");
+                  setSentName("");
+                }}
+                className="mt-8 inline-flex items-center gap-2 border border-bone/20 px-6 py-3 text-xs font-semibold uppercase tracking-widest text-bone/80 transition-colors hover:border-gold hover:text-gold"
+              >
+                Send Another Message
+              </button>
+            </div>
+          ) : (
           <form
             className="border border-bone/10 bg-ink-soft/60 p-8 backdrop-blur lg:p-10"
             onSubmit={handleSubmit}
@@ -222,11 +298,6 @@ export default function Contact() {
               Tell us a bit about yourself and we&apos;ll be in touch.
             </p>
 
-            {status === "success" && (
-              <div className="mt-4 border border-gold/40 bg-gold/10 px-4 py-3 text-sm text-gold">
-                Thank you! Your message has been sent. We&apos;ll be in touch soon.
-              </div>
-            )}
             {status === "error" && (
               <div className="mt-4 border border-crimson/40 bg-crimson/10 px-4 py-3 text-sm text-bone/80">
                 {errorMsg}
@@ -320,6 +391,7 @@ export default function Contact() {
               </button>
             </div>
           </form>
+          )}
         </div>
       </div>
     </section>
