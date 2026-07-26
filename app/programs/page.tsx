@@ -2,18 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "../components/PageHero";
 import Programs from "../components/Programs";
+import { pageMetadata } from "../lib/seo";
 
-const title = "Programs — Kids, Youth & Adult Karate";
-const description =
-  "Shotokan karate classes for kids, youth, and adults in Houston. Beginner through advanced — taught in the S.K.I.F. tradition.";
-
-export const metadata: Metadata = {
-  title,
-  description,
-  alternates: { canonical: "/programs" },
-  openGraph: { title, description, url: "/programs" },
-  twitter: { card: "summary_large_image", title, description },
-};
+export const metadata: Metadata = pageMetadata({
+  title: "Programs — Kids, Youth & Adult Karate",
+  description:
+    "Shotokan karate classes for kids, youth, and adults in Houston. Beginner through advanced — taught in the S.K.I.F. tradition.",
+  path: "/programs",
+});
 
 export default function ProgramsPage() {
   return (

@@ -16,7 +16,15 @@
       "Bash(curl -s http://localhost:4174/about)",
       "Bash(curl -s http://localhost:4174/)",
       "Bash(grep -oE '<script type=\"application/ld\\\\+json\">.{0,200}')",
-      "Bash(curl -s http://localhost:4175/about)"
+      "Bash(curl -s http://localhost:4175/about)",
+      "Bash(curl -s http://localhost:4176/sitemap.xml)",
+      "Bash(curl -s http://localhost:4176/robots.txt)",
+      "Bash(curl -s http://localhost:4186/robots.txt)",
+      "Bash(curl -s http://localhost:4186/sitemap.xml)",
+      "Bash(curl -s -o /dev/null -w \"  /opengraph-image  HTTP %{http_code}  %{content_type}  %{size_download} bytes\\\\n\" http://localhost:4186/opengraph-image)",
+      "Bash(curl -s -o /dev/null -w \"  /twitter-image    HTTP %{http_code}  %{content_type}  %{size_download} bytes\\\\n\" http://localhost:4186/twitter-image)",
+      "Bash(node -e ' *)",
+      "Bash(curl -s http://localhost:4190/opengraph-image -o \"C:/Users/david/AppData/Local/Temp/claude/E--Next-js-shotokanhouston/abed9930-95c6-4258-b141-f37780a733eb/scratchpad/og-check2.png\")"
     ]
   }
 }

@@ -4,18 +4,14 @@ import path from "node:path";
 import { type GalleryItem } from "../components/gallery/Lightbox";
 import Zigzag from "../components/gallery/Zigzag";
 import PageHero from "../components/PageHero";
+import { pageMetadata } from "../lib/seo";
 
-const title = "Gallery — Through the Years";
-const description =
-  "A timeline gallery of the Shotokan Karate-Do Center, Houston, TX — moments from the dojo across the decades.";
-
-export const metadata: Metadata = {
-  title,
-  description,
-  alternates: { canonical: "/gallery" },
-  openGraph: { title, description, url: "/gallery" },
-  twitter: { card: "summary_large_image", title, description },
-};
+export const metadata: Metadata = pageMetadata({
+  title: "Gallery — Through the Years",
+  description:
+    "A timeline gallery of the Shotokan Karate-Do Center, Houston, TX — moments from the dojo across the decades.",
+  path: "/gallery",
+});
 
 function loadGalleryItems(): GalleryItem[] {
   const dir = path.join(process.cwd(), "public", "gallery");

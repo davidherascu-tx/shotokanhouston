@@ -4,7 +4,12 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import StructuredData from "./components/StructuredData";
-import { SITE_NAME, SITE_URL } from "./lib/seo";
+import {
+  DEFAULT_DESCRIPTION,
+  DEFAULT_TITLE,
+  SITE_NAME,
+  SITE_URL,
+} from "./lib/seo";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -16,10 +21,6 @@ const cinzel = Cinzel({
   subsets: ["latin"],
   weight: ["400", "600", "700", "900"],
 });
-
-const DEFAULT_TITLE = `${SITE_NAME} — S.K.I.F. Member Dojo`;
-const DEFAULT_DESCRIPTION =
-  "Traditional Shotokan karate dojo in Houston, Texas — a proud member of the Shotokan Karate International Federation (S.K.I.F.). Classes for kids, youth, and adults inside the Trotter Family YMCA of Greater Houston.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

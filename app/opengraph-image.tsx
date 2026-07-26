@@ -1,11 +1,17 @@
 import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
+import { DEFAULT_TITLE } from "./lib/seo";
 
-export const alt =
-  "Shotokan Karate-Do Center, Houston, TX — S.K.I.F. Member Dojo";
+export const alt = DEFAULT_TITLE;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
+
+// Natural size of the logo asset (805x358). Kept in proportion so the emblem
+// isn't squashed, and sat on a light card because the artwork has dark text
+// that would otherwise vanish into the dark background.
+const LOGO_WIDTH = 520;
+const LOGO_HEIGHT = Math.round((520 * 358) / 805);
 
 export default async function Image() {
   const logoData = await readFile(
@@ -28,19 +34,23 @@ export default async function Image() {
           color: "#ffffff",
         }}
       >
-        <img
-          src={logoSrc}
-          width={190}
-          height={190}
-          style={{
-            borderRadius: "9999px",
-            border: "6px solid #c9a24a",
-          }}
-        />
         <div
           style={{
-            marginTop: 44,
-            fontSize: 58,
+            display: "flex",
+            padding: "30px 46px",
+            borderRadius: 18,
+            background: "#ffffff",
+            border: "4px solid #c9a24a",
+          }}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element -- next/image is unsupported inside ImageResponse (satori) */}
+          <img src={logoSrc} width={LOGO_WIDTH} height={LOGO_HEIGHT} alt="" />
+        </div>
+
+        <div
+          style={{
+            marginTop: 46,
+            fontSize: 56,
             fontWeight: 700,
             letterSpacing: 2,
             textTransform: "uppercase",
@@ -51,8 +61,8 @@ export default async function Image() {
         </div>
         <div
           style={{
-            marginTop: 16,
-            fontSize: 30,
+            marginTop: 18,
+            fontSize: 28,
             letterSpacing: 6,
             textTransform: "uppercase",
             color: "#c9a24a",

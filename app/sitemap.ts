@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { SITE_URL } from "./lib/seo";
+import { CONTENT_LAST_MODIFIED, SITE_URL } from "./lib/seo";
 
 const routes: {
   path: string;
@@ -15,10 +15,9 @@ const routes: {
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
   return routes.map((route) => ({
     url: `${SITE_URL}${route.path}`,
-    lastModified: now,
+    lastModified: CONTENT_LAST_MODIFIED,
     changeFrequency: route.changeFrequency,
     priority: route.priority,
   }));

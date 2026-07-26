@@ -1,18 +1,14 @@
 import type { Metadata } from "next";
 import PageHero from "../components/PageHero";
 import Contact from "../components/Contact";
+import { pageMetadata } from "../lib/seo";
 
-const title = "Contact — Visit the Dojo";
-const description =
-  "Visit Shotokan Karate-Do Center, Houston, TX at the Trotter Family YMCA of Greater Houston, 1331 Augusta Dr, Houston, TX 77057. Your first class is free.";
-
-export const metadata: Metadata = {
-  title,
-  description,
-  alternates: { canonical: "/contact" },
-  openGraph: { title, description, url: "/contact" },
-  twitter: { card: "summary_large_image", title, description },
-};
+export const metadata: Metadata = pageMetadata({
+  title: "Contact — Visit the Dojo",
+  description:
+    "Visit Shotokan Karate-Do Center, Houston, TX at the Trotter Family YMCA of Greater Houston, 1331 Augusta Dr, Houston, TX 77057. Your first class is free.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

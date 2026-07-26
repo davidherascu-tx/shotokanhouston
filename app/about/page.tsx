@@ -4,18 +4,14 @@ import Link from "next/link";
 import InternationalWelcome from "../components/InternationalWelcome";
 import PageHero from "../components/PageHero";
 import Welcome from "../components/Welcome";
+import { pageMetadata } from "../lib/seo";
 
-const title = "About — S.K.I.F. Tradition in Houston";
-const description =
-  "Learn about Shotokan Karate-Do Center, Houston, TX, a proud member dojo of the Shotokan Karate International Federation (S.K.I.F.) founded by Soke Hirokazu Kanazawa.";
-
-export const metadata: Metadata = {
-  title,
-  description,
-  alternates: { canonical: "/about" },
-  openGraph: { title, description, url: "/about" },
-  twitter: { card: "summary_large_image", title, description },
-};
+export const metadata: Metadata = pageMetadata({
+  title: "About — S.K.I.F. Tradition in Houston",
+  description:
+    "Learn about Shotokan Karate-Do Center, Houston, TX, a proud member dojo of the Shotokan Karate International Federation (S.K.I.F.) founded by Soke Hirokazu Kanazawa.",
+  path: "/about",
+});
 
 const lineage = [
   {
