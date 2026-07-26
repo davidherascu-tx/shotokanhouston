@@ -5,7 +5,18 @@
       "Bash(npm install *)",
       "Bash(taskkill /PID 14788 /F)",
       "PowerShell(Stop-Process -Id 14788 -Force -ErrorAction SilentlyContinue)",
-      "Bash(npm show *)"
+      "Bash(npm show *)",
+      "Bash(npx tsc *)",
+      "Bash(npm run *)",
+      "Bash(npx next *)",
+      "Bash(curl -s http://localhost:4173/robots.txt)",
+      "Bash(curl -s http://localhost:4173/sitemap.xml)",
+      "Bash(curl -s http://localhost:4173/about)",
+      "Bash(kill %1)",
+      "Bash(curl -s http://localhost:4174/about)",
+      "Bash(curl -s http://localhost:4174/)",
+      "Bash(grep -oE '<script type=\"application/ld\\\\+json\">.{0,200}')",
+      "Bash(curl -s http://localhost:4175/about)"
     ]
   }
 }

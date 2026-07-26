@@ -5,10 +5,16 @@ import { type GalleryItem } from "../components/gallery/Lightbox";
 import Zigzag from "../components/gallery/Zigzag";
 import PageHero from "../components/PageHero";
 
+const title = "Gallery — Through the Years";
+const description =
+  "A timeline gallery of the Shotokan Karate-Do Center, Houston, TX — moments from the dojo across the decades.";
+
 export const metadata: Metadata = {
-  title: "Gallery — Through the Years",
-  description:
-    "A timeline gallery of the Shotokan Karate-Do Center, Houston, TX — moments from the dojo across the decades.",
+  title,
+  description,
+  alternates: { canonical: "/gallery" },
+  openGraph: { title, description, url: "/gallery" },
+  twitter: { card: "summary_large_image", title, description },
 };
 
 function loadGalleryItems(): GalleryItem[] {

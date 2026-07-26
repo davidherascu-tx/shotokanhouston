@@ -1,8 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import HeroSlider from "./components/HeroSlider";
 import IntroTeaser from "./components/IntroTeaser";
 import InternationalWelcome from "./components/InternationalWelcome";
 import Programs from "./components/Programs";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function Home() {
   return (
