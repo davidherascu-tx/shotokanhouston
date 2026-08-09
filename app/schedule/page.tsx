@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Breadcrumbs from "../components/Breadcrumbs";
 import PageHero from "../components/PageHero";
 import Schedule from "../components/Schedule";
 import { pageMetadata } from "../lib/seo";
@@ -13,6 +14,7 @@ export const metadata: Metadata = pageMetadata({
 export default function SchedulePage() {
   return (
     <>
+      <Breadcrumbs name="Class Schedule" path="/schedule" />
       <PageHero
         eyebrow="Weekly Schedule"
         title="When We Train"

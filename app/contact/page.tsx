@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Breadcrumbs from "../components/Breadcrumbs";
 import PageHero from "../components/PageHero";
 import Contact from "../components/Contact";
 import { pageMetadata } from "../lib/seo";
@@ -13,6 +14,7 @@ export const metadata: Metadata = pageMetadata({
 export default function ContactPage() {
   return (
     <>
+      <Breadcrumbs name="Contact" path="/contact" />
       <PageHero
         eyebrow="Get in Touch"
         title="Visit the Dojo"

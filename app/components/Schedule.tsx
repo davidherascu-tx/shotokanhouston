@@ -221,7 +221,7 @@ export default function Schedule() {
         <div className="mt-16 grid items-center gap-10 overflow-hidden border border-ink/10 bg-charcoal lg:grid-cols-2">
           <div className="relative h-64 w-full lg:h-full">
             <Image
-              src="/training.webp"
+              src="/class_free.webp"
               alt="Karate training session"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"

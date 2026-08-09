@@ -27,7 +27,7 @@ export default function Welcome() {
             <div className="absolute -left-4 -top-4 hidden h-full w-full border-2 border-crimson/30 lg:block" />
             <div className="relative aspect-[4/5] w-full overflow-hidden bg-charcoal shadow-2xl">
               <Image
-                src="/about_training.webp"
+                src="/about_training_1.webp"
                 alt="Training at the Shotokan Karate-Do Center, Houston, TX dojo"
                 fill
                 sizes="(min-width: 1024px) 40vw, 90vw"

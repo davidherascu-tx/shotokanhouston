@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Breadcrumbs from "../components/Breadcrumbs";
 import Link from "next/link";
 import PageHero from "../components/PageHero";
 import Programs from "../components/Programs";
@@ -14,6 +15,7 @@ export const metadata: Metadata = pageMetadata({
 export default function ProgramsPage() {
   return (
     <>
+      <Breadcrumbs name="Training Programs" path="/programs" />
       <PageHero
         eyebrow="Training Programs"
         title="Classes for Every Karateka"

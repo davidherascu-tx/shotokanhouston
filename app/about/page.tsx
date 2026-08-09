@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import Breadcrumbs from "../components/Breadcrumbs";
 import Image from "next/image";
 import Link from "next/link";
+import PhotoGrid from "../components/gallery/PhotoGrid";
+import SenseiGallery from "../components/gallery/SenseiGallery";
 import InternationalWelcome from "../components/InternationalWelcome";
 import PageHero from "../components/PageHero";
 import Welcome from "../components/Welcome";
+import { loadPhotos } from "../lib/photos";
 import { pageMetadata } from "../lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -35,8 +39,17 @@ const lineage = [
 ];
 
 export default function AboutPage() {
+  const senseiPhotos = loadPhotos("sensei", {
+    caption: "Sensei Kayarash Daylami",
+    alt: "Sensei Kayarash Daylami, 7th Dan S.K.I.F., Shotokan Karate-Do Center, Houston, TX",
+  });
+  const dojoPhotos = loadPhotos("dojo", {
+    alt: "Inside the dojo at Shotokan Karate-Do Center, Houston, TX",
+  });
+
   return (
     <>
+      <Breadcrumbs name="About the Dojo" path="/about" />
       <PageHero
         eyebrow="About the Dojo"
         title="Tradition, Discipline, and Lineage"
@@ -88,7 +101,7 @@ export default function AboutPage() {
           <div className="mt-0 grid items-center gap-0 overflow-hidden border border-ink/10 shadow-xl lg:grid-cols-2">
             <div className="w-full">
               <Image
-                src="/sensei_kayarash_daylami.webp"
+                src="/sensei_kayarash_daylami_1.webp"
                 alt="Sensei Kayarash Daylami"
                 width={0}
                 height={0}
@@ -112,6 +125,8 @@ export default function AboutPage() {
                 every class, maintaining strong ties with instructors in Japan to
                 ensure our students receive teaching that is true to the tradition.
               </p>
+
+              <SenseiGallery items={senseiPhotos} />
             </div>
           </div>
         </div>
@@ -163,7 +178,31 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-paper py-24 lg:py-28">
+      {dojoPhotos.length ? (
+        <section className="bg-paper pb-24 lg:pb-28">
+          <div className="mx-auto max-w-7xl px-6 lg:px-10">
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="font-display text-xs uppercase tracking-[0.4em] text-crimson">
+                Inside the Dojo
+              </p>
+              <h2 className="font-display mt-4 text-4xl font-bold uppercase leading-tight text-ink sm:text-5xl">
+                Our <span className="text-crimson">Training Hall</span>
+              </h2>
+              <div className="mx-auto mt-6 h-px w-24 bg-gradient-to-r from-transparent via-crimson to-transparent" />
+            </div>
+
+            <div className="mt-14">
+              <PhotoGrid
+                items={dojoPhotos}
+                variant="grid"
+                label="Photographs of the dojo"
+              />
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      <section className="bg-paper pb-24 lg:pb-28">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-10">
           <p className="font-display text-xs uppercase tracking-[0.4em] text-crimson">
             What We Teach
@@ -214,7 +253,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-paper py-24 lg:py-28">
+      <section className="bg-paper pb-24 lg:pb-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="mx-auto max-w-2xl text-center">
             <p className="font-display text-xs uppercase tracking-[0.4em] text-crimson">

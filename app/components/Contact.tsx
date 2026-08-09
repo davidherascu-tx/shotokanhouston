@@ -200,14 +200,16 @@ export default function Contact() {
               </div>
             </div>
 
+            {/* OpenStreetMap rather than Google Maps: the embed sets no
+                cookies, so the site needs no consent banner. */}
             <div className="mt-10 overflow-hidden border border-bone/10 shadow-lg">
               <iframe
                 title="Map to Shotokan Karate-Do Center, Houston, TX at the YMCA"
-                src="https://www.google.com/maps?q=1331+Augusta+Dr,+Houston,+TX+77057&output=embed"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-95.4876%2C29.7504%2C-95.4776%2C29.7564&layer=mapnik&marker=29.7534%2C-95.4826"
                 width="100%"
                 height="260"
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+                referrerPolicy="no-referrer"
                 style={{ border: 0, filter: "grayscale(0.3) contrast(1.05)" }}
               />
             </div>

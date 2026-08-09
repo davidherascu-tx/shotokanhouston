@@ -5,8 +5,15 @@ import { useEffect, useRef } from "react";
 
 export type GalleryItem = {
   src: string;
-  year: number;
   file: string;
+  /** Optional label shown in the lightbox footer. Most sets don't use one. */
+  caption?: string;
+  /**
+   * Descriptive alt text for screen readers and image search. Deliberately
+   * separate from `caption` so photos can be indexable without printing a
+   * label on the page.
+   */
+  alt?: string;
 };
 
 type Props = {
@@ -49,11 +56,14 @@ export default function Lightbox({
   const active = items[activeIndex];
   if (!active) return null;
 
+  const label = active.caption ?? "";
+  const description = active.caption ?? "Photo";
+
   return (
     <div
       role="dialog"
       aria-modal="true"
-      aria-label={`Photo from ${active.year}`}
+      aria-label={description}
       className="fixed inset-0 z-[100] flex items-center justify-center bg-ink/95 p-4 sm:p-10"
       onClick={onClose}
       onTouchStart={(e) => {
@@ -144,7 +154,7 @@ export default function Lightbox({
       >
         <Image
           src={active.src}
-          alt={`Photo from ${active.year}`}
+          alt={active.alt ?? description}
           width={1600}
           height={1200}
           sizes="100vw"
@@ -152,8 +162,12 @@ export default function Lightbox({
           priority
         />
         <div className="mt-5 flex items-center gap-4 text-bone/75">
-          <span className="font-display text-xl text-bone">{active.year}</span>
-          <span className="h-px w-8 bg-bone/30" />
+          {label ? (
+            <>
+              <span className="font-display text-xl text-bone">{label}</span>
+              <span className="h-px w-8 bg-bone/30" />
+            </>
+          ) : null}
           <span className="text-[11px] uppercase tracking-[0.4em]">
             {String(activeIndex + 1).padStart(2, "0")} /{" "}
             {String(items.length).padStart(2, "0")}
@@ -162,17 +176,4 @@ export default function Lightbox({
       </div>
     </div>
   );
-}
-
-// Helper used by every variant: groups items by year (newest first)
-export function groupByYear(items: GalleryItem[]) {
-  const map = new Map<number, GalleryItem[]>();
-  for (const item of items) {
-    const arr = map.get(item.year) ?? [];
-    arr.push(item);
-    map.set(item.year, arr);
-  }
-  return Array.from(map.entries())
-    .sort((a, b) => b[0] - a[0])
-    .map(([year, photos]) => ({ year, photos }));
 }

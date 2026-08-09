@@ -85,7 +85,7 @@ export default function Navbar() {
           })}
           <li>
             <Link
-              href="/contact"
+              href="/join"
               className="ml-4 inline-flex items-center rounded-sm border border-gold/80 bg-crimson px-5 py-2 text-sm font-semibold uppercase tracking-wider text-bone shadow-md transition-all hover:bg-crimson-light hover:shadow-lg hover:shadow-crimson/30"
             >
               Join Now
@@ -142,7 +142,7 @@ export default function Navbar() {
           })}
           <li className="pt-4">
             <Link
-              href="/contact"
+              href="/join"
               className="inline-flex w-full items-center justify-center rounded-sm bg-crimson px-5 py-3 text-sm font-semibold uppercase tracking-widest text-bone"
             >
               Join Now

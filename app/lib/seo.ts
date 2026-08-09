@@ -10,7 +10,7 @@ export const DEFAULT_DESCRIPTION =
 // Bump when page content meaningfully changes. Kept static on purpose: a
 // build-time `new Date()` would tell crawlers every page changed on every
 // deploy, which teaches them to ignore <lastmod> entirely.
-export const CONTENT_LAST_MODIFIED = "2026-07-25";
+export const CONTENT_LAST_MODIFIED = "2026-08-09";
 
 const ogImage = {
   url: "/opengraph-image",
