@@ -31,7 +31,11 @@
       "Bash(curl -sSI \"https://www.openstreetmap.org/export/embed.html?bbox=-95.47,29.73,-95.45,29.75&layer=mapnik\")",
       "Bash(curl -sSI \"https://tile.openstreetmap.org/12/955/1699.png\")",
       "Bash(curl -sSI \"https://www.google.com/maps?q=1331+Augusta+Dr,+Houston,+TX+77057&output=embed\")",
-      "Bash(curl -sS -A \"shotokanhouston.org-setup/1.0\" \"https://nominatim.openstreetmap.org/search?q=1331%20Augusta%20Dr%2C%20Houston%2C%20TX%2077057&format=json&limit=3&addressdetails=1\")"
+      "Bash(curl -sS -A \"shotokanhouston.org-setup/1.0\" \"https://nominatim.openstreetmap.org/search?q=1331%20Augusta%20Dr%2C%20Houston%2C%20TX%2077057&format=json&limit=3&addressdetails=1\")",
+      "Bash(npm view *)",
+      "Bash(npm outdated *)",
+      "Bash(echo \"\\(exit $? — npm outdated returns 1 when updates exist\\)\")",
+      "Bash(git push *)"
     ]
   }
 }
