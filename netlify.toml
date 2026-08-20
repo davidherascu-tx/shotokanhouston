@@ -1,0 +1,14 @@
+# Build command and publish directory are configured in the Netlify UI and are
+# deliberately not repeated here, so this file only adds what the UI can't.
+
+[build.environment]
+  # Next 16.3 enabled Turbopack's filesystem build cache by default
+  # (experimental.turbopackFileSystemCacheForBuild). That cache records the env
+  # values read during compilation, so RESEND_API_KEY lands inside
+  # .next/cache/turbopack/*.sst and trips Netlify's secret scanner.
+  #
+  # Those .sst files are never served: Netlify only saves and restores them
+  # between builds to keep compiles warm. Everything that actually ships
+  # (.next/static, .next/server, the function bundle, public/) is still
+  # scanned, so a genuine leak into a client bundle would still fail the build.
+  SECRETS_SCAN_OMIT_PATHS = ".next/cache/**,.next/dev/cache/**,.netlify/.next/cache/**"

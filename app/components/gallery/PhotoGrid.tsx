@@ -61,8 +61,8 @@ export default function PhotoGrid({
                 <Image
                   src={photo.src}
                   alt={photo.alt ?? ""}
-                  width={1200}
-                  height={900}
+                  width={photo.width ?? 1200}
+                  height={photo.height ?? 900}
                   sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
                   className="h-auto w-full transition-transform duration-700 group-hover:scale-105"
                 />

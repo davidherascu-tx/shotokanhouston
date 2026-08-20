@@ -103,8 +103,8 @@ export default function AboutPage() {
               <Image
                 src="/sensei_kayarash_daylami_1.webp"
                 alt="Sensei Kayarash Daylami"
-                width={0}
-                height={0}
+                width={914}
+                height={1447}
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="w-full h-auto"
               />

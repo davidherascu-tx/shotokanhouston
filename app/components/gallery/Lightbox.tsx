@@ -19,6 +19,13 @@ export type GalleryItem = {
    * label on the page.
    */
   alt?: string;
+  /**
+   * Intrinsic pixel size, read from the file header at build time. Lets the
+   * browser reserve the right box before the photo arrives instead of
+   * resizing on load. Absent if the format's header couldn't be parsed.
+   */
+  width?: number;
+  height?: number;
 };
 
 type Props = {
@@ -217,8 +224,8 @@ export default function Lightbox({
                   <Image
                     src={photo.src}
                     alt={photo.alt ?? photo.caption ?? "Photo"}
-                    width={1600}
-                    height={1200}
+                    width={photo.width ?? 1600}
+                    height={photo.height ?? 1200}
                     sizes="100vw"
                     draggable={false}
                     loading="eager"
