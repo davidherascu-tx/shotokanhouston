@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useCallback, useState } from "react";
 import Lightbox, { type GalleryItem } from "./Lightbox";
+import PhotoOverview from "./PhotoOverview";
 
 type Props = {
   items: GalleryItem[];
@@ -12,7 +13,10 @@ type Props = {
 
 export default function SenseiGallery({ items, thumbCount = 5 }: Props) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [overviewOpen, setOverviewOpen] = useState(false);
 
+  // Closing the lightbox drops back to the contact sheet when that is what it
+  // was opened from, rather than dumping you back on the page.
   const close = useCallback(() => setActiveIndex(null), []);
   const next = useCallback(
     () => setActiveIndex((i) => (i === null ? null : (i + 1) % items.length)),
@@ -65,8 +69,8 @@ export default function SenseiGallery({ items, thumbCount = 5 }: Props) {
           <li>
             <button
               type="button"
-              onClick={() => setActiveIndex(thumbs.length)}
-              aria-label={`Open the remaining ${hidden} photos of Sensei Kayarash Daylami`}
+              onClick={() => setOverviewOpen(true)}
+              aria-label={`Browse all ${items.length} photos of Sensei Kayarash Daylami`}
               className="flex h-16 w-16 items-center justify-center border border-dashed border-crimson/40 bg-crimson/5 font-display text-sm font-bold text-crimson transition-all hover:border-crimson hover:bg-crimson hover:text-bone focus:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2 sm:h-20 sm:w-20"
             >
               +{hidden}
@@ -77,7 +81,7 @@ export default function SenseiGallery({ items, thumbCount = 5 }: Props) {
 
       <button
         type="button"
-        onClick={() => setActiveIndex(0)}
+        onClick={() => setOverviewOpen(true)}
         className="group mt-5 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-crimson transition-colors hover:text-ink"
       >
         View all {items.length} photos
@@ -88,6 +92,16 @@ export default function SenseiGallery({ items, thumbCount = 5 }: Props) {
           →
         </span>
       </button>
+
+      {overviewOpen ? (
+        <PhotoOverview
+          items={items}
+          title="Sensei Kayarash Daylami"
+          topmost={activeIndex === null}
+          onPick={setActiveIndex}
+          onClose={() => setOverviewOpen(false)}
+        />
+      ) : null}
 
       <Lightbox
         items={items}
