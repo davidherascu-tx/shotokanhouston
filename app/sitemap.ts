@@ -11,6 +11,7 @@ const routes: {
   { path: "/about", priority: 0.8, changeFrequency: "monthly" },
   { path: "/programs", priority: 0.8, changeFrequency: "monthly" },
   { path: "/schedule", priority: 0.8, changeFrequency: "weekly" },
+  { path: "/gasshuku", priority: 0.9, changeFrequency: "monthly" },
   { path: "/gallery", priority: 0.6, changeFrequency: "yearly" },
   { path: "/contact", priority: 0.7, changeFrequency: "yearly" },
   { path: "/join", priority: 0.9, changeFrequency: "yearly" },

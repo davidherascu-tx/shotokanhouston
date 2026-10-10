@@ -11,6 +11,7 @@ const links = [
   { href: "/schedule", label: "Schedule" },
   { href: "/gallery", label: "Gallery" },
   { href: "/contact", label: "Contact" },
+  { href: "/gasshuku", label: "Gasshuku" },
 ];
 
 export default function Navbar() {
@@ -62,14 +63,14 @@ export default function Navbar() {
           </div>
         </Link>
 
-        <ul className="hidden md:flex items-center gap-1">
+        <ul className="hidden lg:flex items-center gap-1">
           {links.map((l) => {
             const active = isActive(l.href);
             return (
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className={`relative px-4 py-2 text-sm font-medium uppercase tracking-wider transition-colors ${
+                  className={`relative whitespace-nowrap px-3 py-2 text-sm font-medium uppercase tracking-wider transition-colors lg:px-4 ${
                     active ? "text-gold" : "text-bone/90 hover:text-gold"
                   }`}
                 >
@@ -86,7 +87,7 @@ export default function Navbar() {
           <li>
             <Link
               href="/join"
-              className="ml-4 inline-flex items-center rounded-sm border border-gold/80 bg-crimson px-5 py-2 text-sm font-semibold uppercase tracking-wider text-bone shadow-md transition-all hover:bg-crimson-light hover:shadow-lg hover:shadow-crimson/30"
+              className="ml-4 inline-flex items-center whitespace-nowrap rounded-sm border border-gold/80 bg-crimson px-5 py-2 text-sm font-semibold uppercase tracking-wider text-bone shadow-md transition-all hover:bg-crimson-light hover:shadow-lg hover:shadow-crimson/30"
             >
               Join Now
             </Link>
@@ -96,7 +97,7 @@ export default function Navbar() {
         <button
           aria-label="Toggle menu"
           onClick={() => setOpen((v) => !v)}
-          className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-sm text-bone hover:bg-white/10"
+          className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-sm text-bone hover:bg-white/10"
         >
           <span className="sr-only">Open menu</span>
           <div className="relative h-4 w-6">
@@ -120,7 +121,7 @@ export default function Navbar() {
       </nav>
 
       <div
-        className={`md:hidden overflow-hidden bg-charcoal/95 backdrop-blur transition-[max-height] duration-300 ${
+        className={`lg:hidden overflow-hidden bg-charcoal/95 backdrop-blur transition-[max-height] duration-300 ${
           open ? "max-h-96" : "max-h-0"
         }`}
       >

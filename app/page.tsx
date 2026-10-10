@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import GasshukuBanner from "./components/GasshukuBanner";
 import HeroSlider from "./components/HeroSlider";
 import IntroTeaser from "./components/IntroTeaser";
 import InternationalWelcome from "./components/InternationalWelcome";
@@ -47,6 +48,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <GasshukuBanner />
     </>
   );
 }
