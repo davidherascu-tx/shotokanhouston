@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Breadcrumbs from "../components/Breadcrumbs";
+import ScrollToTop from "../components/ScrollToTop";
 import GasshukuCountdown from "../components/GasshukuCountdown";
 import { GASSHUKU_REGISTER_URL } from "../components/GasshukuBanner";
 import { SITE_NAME, SITE_URL, pageMetadata } from "../lib/seo";
@@ -65,6 +66,7 @@ export default function GasshukuPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
       />
       <Breadcrumbs name="SKIF Gasshuku 2027" path="/gasshuku" />
+      <ScrollToTop />
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-charcoal pb-20 pt-32 lg:pb-28 lg:pt-40">
